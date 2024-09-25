@@ -1,5 +1,5 @@
 ---
-title: "ETF 5543 Report"
+title: "Teaching Math Effectively: Insights from LSAY and PISA on Primary Teacher Proficiency"
 author: Tashya Sathyajit (29672732)
 format: pdf
 number-sections: true
@@ -10,3 +10,54 @@ execute:
   wordcount: true
 toc: true
 ---
+
+```{r}
+library(dplyr)
+library(kableExtra)
+```
+
+# Abstract
+
+# Objectives and significance
+
+# Methodology
+
+The aim of the project was to understand the performance of primary school teachers in Australia in mathematics, utilising the Longitudinal Surveys of Australian Youth [(LSAY)](https://www.lsay.edu.au/) and Programme for International Student Assessment [(PISA)](https://www.oecd.org/en/about/programmes/pisa.html) datasets. `Intsvy` and `rrepest` were used to determine accurate summary statistics.
+
+### The Data
+
+The analysis required data which retained the demographic information from LSAY with the corresponding PISA scores for each observation. To achieve this, LSAY data post 2003 was used as participants were recruited from schools that also took part in the PISA. These years included: 2003, 2006, 2009 and 2015.
+
+In the dataset each row represented a student, and each column had demographical data encoded into variable names, PISA scores and weights.
+
+A dummy data frame was created for better understanding:
+
+```{r}
+# creating a dummy data frame as data is private
+dummy_data <- data.frame(
+  STIDSTD = sample(1:5, 10, replace = TRUE),
+  SECTOR = sample(1:2, 10, replace = TRUE),
+  SEX = sample(1:2, 10, replace = TRUE),
+  PV1MATH = runif(10, 400, 600),
+  PV2MATH = runif(10, 400, 600),
+  ST38Q03 = sample(1:5, 10, replace = TRUE),
+  ST38Q04 = sample(1:5, 10, replace = TRUE),
+  ST38Q05 = sample(1:5, 10, replace = TRUE),
+  w_fstr1 = runif(10, 0.5, 1.5)
+)
+
+# Display the dummy dataframe with adjusted styling to fit the page
+dummy_data %>%
+  kable("latex", booktabs = TRUE, longtable = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "scale_down"), font_size = 8) %>%
+  column_spec(1:5, width = "5em") %>%
+  row_spec(0, bold = TRUE, background = "#D3D3D3")
+```
+
+
+# Results
+
+# Discussion
+
+# Conclusion
+
