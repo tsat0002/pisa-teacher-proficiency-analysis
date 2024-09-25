@@ -1,0 +1,12 @@
+---
+title: "ETF 5543 Report"
+author: Tashya Sathyajit (29672732)
+format: pdf
+number-sections: true
+execute: 
+  echo: false
+  warning: false
+  message: false
+  wordcount: true
+toc: true
+---
