@@ -18,6 +18,12 @@ library(kableExtra)
 
 # Abstract
 
+# Background and motivation
+
+Australian school students are consistently under performing in mathematics, in particular almost half of Australia's 15 year-old students are failing to achieve national standards in mathematics with the nation now more than four years behind the world's top-performing [jurisdiction in maths](https://www.theage.com.au/national/victoria/australian-school-students-more-than-four-years-behind-in-maths-20231204-p5eosl.html).
+
+
+
 # Objectives and significance
 
 # Methodology
