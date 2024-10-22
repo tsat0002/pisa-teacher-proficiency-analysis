@@ -18,6 +18,8 @@ library(kableExtra)
 
 # Abstract
 
+This report investigates the mathematics performance of individuals who became primary school teachers in Australia, using the Longitudinal Surveys of Australian Youth (LSAY) and the Program For International Student Assessment (PISA) datasets. Results show that teachers consistently have a higher average math proficiency than non-teachers over time, with better performance across PISA testing years. However, they tend to score lower than professionals in fields like medicine, law, and engineering. Limitations include disproportionate teacher counts in some PISA years, potentional attrition bias, confounding variables such as socioeconomic status, and the evolving nature of math proficiency over time.
+
 # Background and motivation
 
 Australian school students are consistently under performing in mathematics, in particular almost half of Australia's 15 year-old students are failing to achieve national standards in mathematics with the nation now more than four years behind the world's top-performing [jurisdiction in maths](https://www.theage.com.au/national/victoria/australian-school-students-more-than-four-years-behind-in-maths-20231204-p5eosl.html).
@@ -26,9 +28,20 @@ Australian school students are consistently under performing in mathematics, in 
 
 # Objectives and significance
 
+The main objectives of this analysis was to utilise longitudinal survey data in order to gain some understanding of the math proficiency of students who eventually became primary school teachers.
+
+The analysis had four main questions it sought to explore:
+1. How well are teachers performing in maths across the years?
+2. How are they performing in comparison to other 'professionls'?
+3. How are they performing in comparison to the rest of the Australian population?
+4. How many teachers are performing above the proficiency standard in each year and across the years?
+
 # Methodology
 
 The aim of the project was to understand the performance of primary school teachers in Australia in mathematics, utilising the Longitudinal Surveys of Australian Youth [(LSAY)](https://www.lsay.edu.au/) and Programme for International Student Assessment [(PISA)](https://www.oecd.org/en/about/programmes/pisa.html) datasets. `Intsvy` and `rrepest` were used to determine accurate summary statistics.
+
+We wanted to 
+
 
 ### The Data
 
