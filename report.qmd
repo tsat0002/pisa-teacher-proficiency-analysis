@@ -28,13 +28,14 @@ Australian school students are consistently under performing in mathematics, in 
 
 # Objectives and significance
 
-The main objectives of this analysis was to utilise longitudinal survey data in order to gain some understanding of the math proficiency of students who eventually became primary school teachers.
+The primary objectives of this analysis was to utilise longitudinal survey data to understand  the mathematics proficiency of students who eventually became primary school teachers in Australia. Using the LSAY and PISA datasets, the analysis seeks to address four main questions:
 
-The analysis had four main questions it sought to explore:
-1. How well are teachers performing in maths across the years?
-2. How are they performing in comparison to other 'professionls'?
-3. How are they performing in comparison to the rest of the Australian population?
-4. How many teachers are performing above the proficiency standard in each year and across the years?
+1. **Teacher performance over time:** How well did individuals who became primary school teachers perform in mathematics across the years?
+2. **Comparison to other Professionals:** How are they performing in comparison to other 'professionals'?
+3. **Comparison to the General Population:** How do teachers' math scores compare to the rest of the sample (non primary school teachers)?
+4. **Proficiency standards:** How many teachers meet or exceed the mathematics proficiency standard in each year and over time?
+
+This analysis is significant as it provides critical insights into the math skills of individuals who become primary school teachers, a factor that can directly impact student outcomes. By identifying trends and proficiency gaps, the analysis can allow for a deeper understanding of the performance of primary school teachers in Australia and inform potential
 
 # Methodology
 
