@@ -39,10 +39,15 @@ This analysis is significant as it provides critical insights into the math skil
 
 # Methodology
 
-The aim of the project was to understand the performance of primary school teachers in Australia in mathematics, utilising the Longitudinal Surveys of Australian Youth [(LSAY)](https://www.lsay.edu.au/) and Programme for International Student Assessment [(PISA)](https://www.oecd.org/en/about/programmes/pisa.html) datasets. `Intsvy` and `rrepest` were used to determine accurate summary statistics.
+The analysis focused on evaluating the mathematical performance of individuals who later became primary school teachers using [(PISA)](https://www.oecd.org/en/about/programmes/pisa.html) and [(LSAY)](https://www.lsay.edu.au/).
 
-We wanted to 
+As the aim was to determine how individuals who became primary school teachers performed in mathematics, to be able to explore this the student ID was used to keep track of the observations. [ANZSCO codes](https://www.abs.gov.au/statistics/classifications/anzsco-australian-and-new-zealand-standard-classification-occupations/latest-release) were then utilised to identify the primary school teachers in variables that related to the occupation of the individual. We filtered student ID's of those who responded to those variables (i.e. 'Kind of work') with the ANZSCO code, 2412. Additionally, to see the pathway of these individuals we looked for these students and their responses to 'Area of Study' variables. 
 
+
+
+## Working with Plausible Values Accurately
+
+To handle PISA's plausible values and sampling weights, the analysis utilised [`intsvy`](https://github.com/eldafani/intsvy) and [`rrepest`](https://github.com/cran/Rrepest) R packages, which are designed to accurately estimate statistics under the complex survey design used by PISA. These allowed for the calculation of mean scores, confidence intervals and standard errors while accounting for the inherent variability within the dataset. 
 
 ### The Data
 
@@ -77,7 +82,16 @@ dummy_data %>%
 
 # Results
 
+
+
 # Discussion
+
+
+
+# Limitations
+
+
+
 
 # Conclusion
 
