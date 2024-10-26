@@ -12,8 +12,10 @@ toc: true
 ---
 
 ```{r}
+
 library(dplyr)
 library(kableExtra)
+
 ```
 
 # Abstract
@@ -24,8 +26,7 @@ This report investigates the mathematics performance of individuals who became p
 
 Over the past two decades, Australian students' performance in the mathematics components of international assessments like PISA have shown [significant declines.](https://d1wqtxts1xzle7.cloudfront.net/57141870/Morsy__Khavenson__Carnoy__2018._How_international_tests_fail_to_inform_policy-libre.pdf?1533581345=&response-content-disposition=inline%3B+filename%3DHow_international_tests_fail_to_inform_p.pdf&Expires=1729912030&Signature=ApSPqfXhzY0QgniYXnR-sD6x-YnbhxaJd20T1EGQdRChDRaVLH-gqFf3iWzu9H~0Yv4ad2ls6nQvwxvAa5YzlyrwLK4YPd8N8jlhB0~nFbF~5CEqKBhG5RCthm5b2-ynja8eJSokxsfEEVjy-HiX3RCgxfZpE7UhYVAdOuqehKV4s3gNrEtGTd82J4RGt8VapK0MT6B~D066LmR~nR44sccPY7sX6UdqPg4sXkBtQKASI2qF4uvWLM5qkgvUHmsTBQvfEYNCc1NXe-3AzfLDwrsbVzszbb7J4-N8SEhDEXF3JRyJWXPubgeh8csxnYa73FFNbrkCcQnNiU4JIYgrXQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) These declines persist even after adjusting for changes in family academic resources, affecting students across all states, social groups, and school types (albeit with variations).This trend has raised concerns among educators, researchers and policymakers as mathematics proficiency is not only foundational for broader academic success but crucial for Australia's future economic competitiveness.
 
-Research indicates a positive correlation between teacher mathematics knowledge (as assessed through certification exams or subject-matter tests) and [student achievement](https://dash.harvard.edu/bitstream/handle/1/37364487/Hill_Rowan_Ball_050405.pdf?sequence=2&isAllowed=y). This underscores the importance of qualified primary school teachers in improving children's math outcomes, supporting the notion that teachers with stronger mathematical knowledge are [likely to teach it more effectively.](https://www.researchgate.net/profile/Stephen-Norton-5/publication/322991092_The_relationship_between_mathematical_content_knowledge_and_mathematical_pedagogical_content_knowledge_of_prospective_primary_teachers/links/5a7bb457aca27233575b1e9d/The-relationship-between-mathematical-content-knowledge-and-mathematical-pedagogical-content-knowledge-of-prospective-primary-teachers.pdf
-)
+Research indicates a positive correlation between teacher mathematics knowledge (as assessed through certification exams or subject-matter tests) and [student achievement](https://dash.harvard.edu/bitstream/handle/1/37364487/Hill_Rowan_Ball_050405.pdf?sequence=2&isAllowed=y). This underscores the importance of qualified primary school teachers in improving children's math outcomes, supporting the notion that teachers with stronger mathematical knowledge are [likely to teach it more effectively.](https://www.researchgate.net/profile/Stephen-Norton-5/publication/322991092_The_relationship_between_mathematical_content_knowledge_and_mathematical_pedagogical_content_knowledge_of_prospective_primary_teachers/links/5a7bb457aca27233575b1e9d/The-relationship-between-mathematical-content-knowledge-and-mathematical-pedagogical-content-knowledge-of-prospective-primary-teachers.pdf)
 
 While research consistently suggests that a teacher's proficiency in mathematics is a crucial determinant of their effectiveness in the classroom, impacting student achievement directly (Tatto et al. 2008, p. 19) the relationship between a teacher's subject knowledge and student performance is complex, and extends beyond the teacher's own content mastery. It involves the ability to translate that knowledge into effective pedagogical practices, adapt to curriculum needs, engage in productive professional conversations and address student misconceptions. When students are taught by teachers who have little mathematical content *and* pedagogical content knowledge, learning suffers (Baumert et al., 2010; Hill et al., 2005).
 
@@ -33,40 +34,91 @@ Despite these nuances, the positive correlation between teachers' competence in 
 
 This analysis seeks to deepen the understanding of the mathematics proficiency of individuals who eventually become primary school teachers in Australia by leveraging longitudinal data from PISA and LSAY. By examining trends over time and comparing the math performance of primary school teachers, the broader Australian population and other professionals, this study aims to provide insights into the readiness of teachers to deliver effective math instruction. Understanding these trend is crucial, as they provide insights into the mathematics performance of individuals who later became primary school teachers, and may assist in guiding professional development initiatives focused on targeting and strengthening the mathematics proficiency of primary school teachers, ultimately leading to improved student outcomes across Australia.
 
-
 # Objectives and significance
 
-The primary objectives of this analysis was to utilise longitudinal survey data to understand  the mathematics proficiency of students who eventually became primary school teachers in Australia. Using the LSAY and PISA datasets, the analysis seeks to address four main questions:
+The primary objectives of this analysis was to utilise longitudinal survey data to understand the mathematics proficiency of students who eventually became primary school teachers in Australia. Using the LSAY and PISA datasets, the analysis seeks to address four main questions:
 
-1. **Teacher performance over time:** How well did individuals who became primary school teachers perform in mathematics across the years?
-2. **Comparison to other Professionals:** How are they performing in comparison to other 'professionals'?
-3. **Comparison to the General Population:** How do teachers' math scores compare to the rest of the sample (non primary school teachers)?
-4. **Proficiency standards:** How many teachers meet or exceed the mathematics proficiency standard in each year and over time?
+1.  **Teacher performance over time:** How well did individuals who became primary school teachers perform in mathematics across the years?
+2.  **Comparison to other Professionals:** How are they performing in comparison to other 'professionals'?
+3.  **Comparison to the General Population:** How do teachers' math scores compare to the rest of the sample (non primary school teachers)?
+4.  **Proficiency standards:** How many teachers meet or exceed the mathematics proficiency standard in each year and over time?
 
 This analysis is significant as it provides critical insights into the math skills of individuals who become primary school teachers, a factor that can directly impact student outcomes. By identifying trends and proficiency gaps, the analysis can allow for a deeper understanding of the performance of primary school teachers in Australia and inform potential
 
 # Methodology
 
-The analysis focused on evaluating the mathematical performance of individuals who later became primary school teachers using [(PISA)](https://www.oecd.org/en/about/programmes/pisa.html) and [(LSAY)](https://www.lsay.edu.au/).
+Data was sourced from multiple LSAY cohorts (2003, 2006, 2009 and 2015), each containing demographic data from student responses and their linked performance in PISA. Data was selected from these years because post 2003, LSAY participants were recruited from schools that also took part in PISA, allowing for the linkage of PISA scores to LSAY data.
 
-As the aim was to determine how individuals who became primary school teachers performed in mathematics, to be able to explore this the student ID was used to keep track of the observations. [ANZSCO codes](https://www.abs.gov.au/statistics/classifications/anzsco-australian-and-new-zealand-standard-classification-occupations/latest-release) were then utilised to identify the primary school teachers in variables that related to the occupation of the individual. We filtered student ID's of those who responded to those variables (i.e. 'Kind of work') with the ANZSCO code, 2412. Additionally, to see the pathway of these individuals we looked for these students and their responses to 'Area of Study' variables. 
+## How did we identify primary school teachers?
 
-### The Data
+For each cohort, variables relating to kind of work were selected for each wave of LSAY data aforementioned. These were located using the LSAY data dictionary sourced [here.](https://www.lsay.edu.au/data/lsay-data-dictionary/data-dictionary)
 
-The analysis required data which retained the demographic information from LSAY with the corresponding PISA scores for each observation. To achieve this, LSAY data post 2003 was used as participants were recruited from schools that also took part in the PISA. These years included: 2003, 2006, 2009 and 2015. It starts with a sample of 15-year-old students who repeatedly tested until they reach the age of 25 and as such, PISA utilises a complex survey design with sampling weights and plausible values.
+For variables associated with the kind of work, the ANZSCO code `2412` was used to identify which observations (identified by the student ID) were primary school teachers. This variables used to filter can be seen in @tbl-kow.
+
+```{r}
+#| label: tbl-kow
+#| tbl-cap: "Variables for 'What kind of work do you do in this job?' Questions"
+kow <- data.frame(
+  Year = c(2003, 2006, 2009, 2015),
+  Variables = c(
+    "LDD025, LED025, LFD025, LGD025, LHD029, LID029, LJD029, LKD029",
+    "ANZSCO, LBD011, LCD024, LDD024, LED029, LFD029, LGD029, LHD029, LID029, LJD029, LKD029",
+    "ANZSCO73, LBD014, LCD029, LDD029, LED029, LFD029, LGD029, LHD029, LID029, LJD029, LKD029",
+    "LSAYID, LBEM004, LCD022, LDD022, LED022, LFD025, LGD022, LHD022"
+  )
+)
+
+kable(kow, 
+      booktabs = TRUE, 
+      align = "l") %>%
+  kable_styling(latex_options = c("striped")) %>%
+  column_spec(1, bold = TRUE, border_right = TRUE) %>%
+  column_spec(2, width = "30em") %>%
+  row_spec(0, bold = TRUE, color = "white", background = "gray") %>%
+  row_spec(1:nrow(kow), hline_after = TRUE)
+
+```
+
+
+For better understanding of the legitimacy of this method, we then filtered those student IDs that responded with that ANZSCO code for variables regarding area of study. This was done to see whether the individuals who did become teachers also did some form of teaching degree pathway to get into the profession. This used ASCED code `70103` in variables relating to questions focused at main area of study/training in this course at any given year seen in @table-aos
+
+
+```{r}
+#| label: tbl-aos
+#| tbl-cap: "Variables for Main Area of Study Questions"
+aos <- data.frame(
+  Year = c(2003, 2006, 2009, 2015),
+  Variables = c(
+    "LBCZ087, LCCZ087, LDCZ087, LEC087, LFC087, LGC087, LHC087, LIC087, LJC088, LKC088",
+    "LBC087, LCC087, LDC087, LEC087, LFC087, LGC088, LHC088, LIC088, LJC088, LKC088",
+    "LBC089, LCC088, LDC088, LEC088, LFC088, LGC088, LHC088, LIC088, LJC088, LKC088",
+    "LCC088, LDC088, LEC088, LFC088, LGC088, LHC088"
+  )
+)
+
+kable(aos, 
+      booktabs = TRUE, 
+      align = "l") %>%
+  kable_styling(latex_options = c("striped")) %>%
+  column_spec(1, bold = TRUE, border_right = TRUE) %>%
+  column_spec(2, width = "30em") %>%
+  row_spec(0, bold = TRUE, color = "white", background = "gray") %>%
+  row_spec(1:nrow(aos), hline_after = TRUE)
+```
+
+
+## How did we complete the Mathematical Proficiency Analysis?
+
+The mathematics performance of primary school teachers was assessed using PISA scores. The analysis aimed to compare teachers' scores against the national proficiency standard which has been set at a proficiency level 3 or [482 PISA points](https://www.parliament.nsw.gov.au/researchpapers/Documents/PISA%20paper.pdf). The analysis incorporated survey weights to ensure representativeness of the data and address differences in sample sizes across cohorts. It also had to account for the use of plausible values undertaken by PISA.
+
 
 ## Working with Sampling Weights and Plausible Values Accurately
 
-To handle PISA's plausible values and sampling weights, the analysis utilised [`intsvy`](https://github.com/eldafani/intsvy) and [`rrepest`](https://github.com/cran/Rrepest) R packages, which are designed to accurately estimate statistics under the complex survey design used by PISA. 
+To handle PISA's plausible values and sampling weights, the analysis utilised [`intsvy`](https://github.com/eldafani/intsvy) and [`rrepest`](https://github.com/cran/Rrepest) R packages, which are designed to accurately estimate statistics under the complex survey design used by PISA.
 
-These allowed for the calculation of mean scores, confidence intervals and standard errors while accounting for the inherent variability within the dataset. 
+These allowed for the calculation of mean scores, confidence intervals and standard errors while accounting for the inherent variability within the dataset.
 
 **But what are plausible values?**
-
-
-
-
-
 
 In the dataset each row represented a student, and each column had demographical data encoded into variable names, PISA scores and weights.
 
@@ -94,19 +146,20 @@ dummy_data %>%
   row_spec(0, bold = TRUE, background = "#D3D3D3")
 ```
 
+## How did the packages account for this?
+
+
 
 # Results
+
+As earlier mentioned in the report, 
+
+
 
 
 
 # Discussion
 
-
-
 # Limitations
 
-
-
-
 # Conclusion
-
