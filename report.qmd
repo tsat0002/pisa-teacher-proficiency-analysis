@@ -24,7 +24,7 @@ This report investigates the mathematics performance of individuals who became p
 
 # Background and motivation
 
-Over the past two decades, Australian students' performance in the mathematics components of international assessments like PISA have shown [significant declines.](https://d1wqtxts1xzle7.cloudfront.net/57141870/Morsy__Khavenson__Carnoy__2018._How_international_tests_fail_to_inform_policy-libre.pdf?1533581345=&response-content-disposition=inline%3B+filename%3DHow_international_tests_fail_to_inform_p.pdf&Expires=1729912030&Signature=ApSPqfXhzY0QgniYXnR-sD6x-YnbhxaJd20T1EGQdRChDRaVLH-gqFf3iWzu9H~0Yv4ad2ls6nQvwxvAa5YzlyrwLK4YPd8N8jlhB0~nFbF~5CEqKBhG5RCthm5b2-ynja8eJSokxsfEEVjy-HiX3RCgxfZpE7UhYVAdOuqehKV4s3gNrEtGTd82J4RGt8VapK0MT6B~D066LmR~nR44sccPY7sX6UdqPg4sXkBtQKASI2qF4uvWLM5qkgvUHmsTBQvfEYNCc1NXe-3AzfLDwrsbVzszbb7J4-N8SEhDEXF3JRyJWXPubgeh8csxnYa73FFNbrkCcQnNiU4JIYgrXQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) These declines persist even after adjusting for changes in family academic resources, affecting students across all states, social groups, and school types (albeit with variations).This trend has raised concerns among educators, researchers and policymakers as mathematics proficiency is not only foundational for broader academic success but crucial for Australia's future economic competitiveness.
+Over the past two decades, Australian students' performance in the mathematics components of international assessments like PISA have shown [significant declines](https://d1wqtxts1xzle7.cloudfront.net/57141870/Morsy__Khavenson__Carnoy__2018._How_international_tests_fail_to_inform_policy-libre.pdf?1533581345=&response-content-disposition=inline%3B+filename%3DHow_international_tests_fail_to_inform_p.pdf&Expires=1729912030&Signature=ApSPqfXhzY0QgniYXnR-sD6x-YnbhxaJd20T1EGQdRChDRaVLH-gqFf3iWzu9H~0Yv4ad2ls6nQvwxvAa5YzlyrwLK4YPd8N8jlhB0~nFbF~5CEqKBhG5RCthm5b2-ynja8eJSokxsfEEVjy-HiX3RCgxfZpE7UhYVAdOuqehKV4s3gNrEtGTd82J4RGt8VapK0MT6B~D066LmR~nR44sccPY7sX6UdqPg4sXkBtQKASI2qF4uvWLM5qkgvUHmsTBQvfEYNCc1NXe-3AzfLDwrsbVzszbb7J4-N8SEhDEXF3JRyJWXPubgeh8csxnYa73FFNbrkCcQnNiU4JIYgrXQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) as seen in @fig-pisadecline. These declines persist even after adjusting for changes in family academic resources, affecting students across all states, social groups, and school types (albeit with variations).This trend has raised concerns among educators, researchers and policymakers as mathematics proficiency is not only foundational for broader academic success but crucial for Australia's future economic competitiveness.
 
 Research indicates a positive correlation between teacher mathematics knowledge (as assessed through certification exams or subject-matter tests) and [student achievement](https://dash.harvard.edu/bitstream/handle/1/37364487/Hill_Rowan_Ball_050405.pdf?sequence=2&isAllowed=y). This underscores the importance of qualified primary school teachers in improving children's math outcomes, supporting the notion that teachers with stronger mathematical knowledge are [likely to teach it more effectively.](https://www.researchgate.net/profile/Stephen-Norton-5/publication/322991092_The_relationship_between_mathematical_content_knowledge_and_mathematical_pedagogical_content_knowledge_of_prospective_primary_teachers/links/5a7bb457aca27233575b1e9d/The-relationship-between-mathematical-content-knowledge-and-mathematical-pedagogical-content-knowledge-of-prospective-primary-teachers.pdf)
 
@@ -34,14 +34,18 @@ Despite these nuances, the positive correlation between teachers' competence in 
 
 This analysis seeks to deepen the understanding of the mathematics proficiency of individuals who eventually become primary school teachers in Australia by leveraging longitudinal data from PISA and LSAY. By examining trends over time and comparing the math performance of primary school teachers, the broader Australian population and other professionals, this study aims to provide insights into the readiness of teachers to deliver effective math instruction. Understanding these trend is crucial, as they provide insights into the mathematics performance of individuals who later became primary school teachers, and may assist in guiding professional development initiatives focused on targeting and strengthening the mathematics proficiency of primary school teachers, ultimately leading to improved student outcomes across Australia.
 
+
+![Decline in PISA Scores Across the Years](images/pisadecline.png){#fig-pisadecline}
+
+
+
 # Objectives and significance
 
-The primary objectives of this analysis was to utilise longitudinal survey data to understand the mathematics proficiency of students who eventually became primary school teachers in Australia. Using the LSAY and PISA datasets, the analysis seeks to address four main questions:
+The primary objectives of this analysis was to utilise longitudinal survey data to understand the mathematics proficiency of students who eventually became primary school teachers in Australia. Using the LSAY and PISA datasets, the analysis seeks to address three main questions:
 
 1.  **Teacher performance over time:** How well did individuals who became primary school teachers perform in mathematics across the years?
 2.  **Comparison to other Professionals:** How are they performing in comparison to other 'professionals'?
 3.  **Comparison to the General Population:** How do teachers' math scores compare to the rest of the sample (non primary school teachers)?
-4.  **Proficiency standards:** How many teachers meet or exceed the mathematics proficiency standard in each year and over time?
 
 This analysis is significant as it provides critical insights into the math skills of individuals who become primary school teachers, a factor that can directly impact student outcomes. By identifying trends and proficiency gaps, the analysis can allow for a deeper understanding of the performance of primary school teachers in Australia and inform potential
 
@@ -152,14 +156,33 @@ dummy_data %>%
 
 # Results
 
-As earlier mentioned in the report, 
+As earlier mentioned in the report, the project sought to address three key questions through the exploration of the mathematical performance of indiviudals who became primary school teachers. 
+
+### How well did individuals who became primary school teachers perform in mathematics across the years?
+
+![Weighted Aggregate Performance of Teachers vs Non-Teachers Who Met National Proficiency Standard](images/weightedprof.png){#fig-weightedprof}
 
 
 
+### How are they performing in comparison to other 'professionals'?
+
+![Teachers in Comparison to Other Professionals](images/professionals.png){#fig-professionals}
+
+
+
+
+### How do teachers' math scores compare to the rest of the sample (non primary school teachers)?
+
+
+
+![Proficiency of Teachers vs Non-Teachers Across Years](images/profacrossyears.png){#fig-acrossyears}
 
 
 # Discussion
 
 # Limitations
+
+![Count of Teachers per Year](images/teachercount.png){#fig-teachercount}
+
 
 # Conclusion
