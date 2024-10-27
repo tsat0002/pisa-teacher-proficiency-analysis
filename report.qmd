@@ -124,31 +124,6 @@ These allowed for the calculation of mean scores, confidence intervals and stand
 
 **But what are plausible values?**
 
-In the dataset each row represented a student, and each column had demographical data encoded into variable names, PISA scores and weights.
-
-A dummy data frame was created for better understanding:
-
-```{r}
-# creating a dummy data frame as data is private
-dummy_data <- data.frame(
-  STIDSTD = sample(1:5, 10, replace = TRUE),
-  SECTOR = sample(1:2, 10, replace = TRUE),
-  SEX = sample(1:2, 10, replace = TRUE),
-  PV1MATH = runif(10, 400, 600),
-  PV2MATH = runif(10, 400, 600),
-  ST38Q03 = sample(1:5, 10, replace = TRUE),
-  ST38Q04 = sample(1:5, 10, replace = TRUE),
-  ST38Q05 = sample(1:5, 10, replace = TRUE),
-  w_fstr1 = runif(10, 0.5, 1.5)
-)
-
-# Display the dummy dataframe with adjusted styling to fit the page
-dummy_data %>%
-  kable("latex", booktabs = TRUE, longtable = TRUE) %>%
-  kable_styling(latex_options = c("hold_position", "scale_down"), font_size = 8) %>%
-  column_spec(1:5, width = "5em") %>%
-  row_spec(0, bold = TRUE, background = "#D3D3D3")
-```
 
 ## How did the packages account for this?
 
@@ -160,25 +135,49 @@ As earlier mentioned in the report, the project sought to address three key ques
 
 ### How well did individuals who became primary school teachers perform in mathematics across the years?
 
-![Weighted Aggregate Performance of Teachers vs Non-Teachers Who Met National Proficiency Standard](images/weightedprof.png){#fig-weightedprof}
+The analysis reveals that individuals who eventually became primary school teachers consistently performed better in mathematics compared to their non-teaching peers over the years. To quantify this, the weighted average proficiency of teachers and non-teachers was calculated taking into consideration the total number of teachers and non-teachers which served as the basis for weighting the average proficiency scores. 
+
+The results show as depicted in @fig-weightedprof, and illustrates that over the years considered in this analysis, just over 80% of teachers met or exceed the national proficiency standard. In comparison, just over 60% of the non-teachers met or exceeded the national proficiency standard of 482 PISA points. This may suggest that individuals who eventually become primary school teachers have a higher proficiency in mathematics compared to their non-teaching peers.
 
 
 
-### How are they performing in comparison to other 'professionals'?
-
-![Teachers in Comparison to Other Professionals](images/professionals.png){#fig-professionals}
+![Weighted Average of Performance Across Years: Teachers vs Non-Teachers](images/weightedprof.png){#fig-weightedprof}
 
 
 
 
 ### How do teachers' math scores compare to the rest of the sample (non primary school teachers)?
 
+When trying to see how teachers performed in each year, we were able to find that teachers tended to perform better across each year of testing. As seen in @fig-acrossyears, teachers (red) tend to do consistently better than non-teachers (orange) across the years. 
+
+The boxplots shows that the median, interquartile range, and 10th and 90th percentiles. The boxplots for non-teachers have longer whiskers, indicating a broader range of scores and greater variability in math proficiency compared to teachers. The wider spread suggests that non-teachers include individuals with a diverse range of mathematical skills, spanning from very low to very high.
+
+For teachers, the whiskers are shorter, indicating more consistency in their math scores. However, the standard error (SE) for the teacher group is higher, this is likely due to their smaller sample size, which increases the uncertaining in estimating the average score.
+
+Ultimately, while non-teachers exhibit more variability in individual scores, the higher standard error for teachers reflects the effect of smaller sample sizes on the precision of the average, not necessarily a greater variability in the scores itself.
 
 
 ![Proficiency of Teachers vs Non-Teachers Across Years](images/profacrossyears.png){#fig-acrossyears}
 
 
+
+### How are they performing in comparison to other 'professionals'?
+
+The project had a smaller focus on understanding how teachers' mathematical proficiency compared to other professionals, driven largely by curiosity rather than formal research aims. The selection of professional categories was based on existing reports, and the analysis was conducted on the 2003 PISA cohort, the year with the largest sample of teachers. However this still had its limitations due to the smaller sample size of the relative professional groups within a total sample of 10,370, limiting the overall robustness of the findings.
+
+Despite this, as seen in @fig-professionals, teachers performed lower than most other professional groups in terms of average mathematical proficiency at age 15. Professions such as medical practioners, legal professionals, engineers and auditors scored higher on average, indicating better mathematical capability amongst these groups. However, teachers school higher than the 'Other' category, which represents the broader population to aligned with the specific professions of interest. This suggests that while teachers were not among the highest performing professional groups, they seemed to demonstrate better mathematical proficiency than the general cohort.
+
+Despite these findings, it is important to consider the larger confidence intervals observed for certain professional groups, such as legal professionals, engineers, and auditors. These wider intervals indicate greater uncertainty in the estimates and may result from factors like smaller sample sizes and higher variability within these groups.
+
+
+![Teachers in Comparison to Other Professionals](images/professionals.png){#fig-professionals}
+
+
 # Discussion
+
+
+
+
 
 # Limitations
 
