@@ -124,8 +124,27 @@ These allowed for the calculation of mean scores, confidence intervals and stand
 
 **But what are plausible values?**
 
+International surveys such as PISA report student performance using plausible values (PVs). Plausible values are a statistical technique that represent uncertainty in measurements by generating a range of possible values a student may have obtained as opposed to a single estimate. This approach assists in conveying the variability in student performance more accurately, considering that not all students answer the same questions (PISA is a large test) or have the same background information. 
+
+To derive PVs, PISA uses [Item Response Theory (IRT)](https://www.oecd-ilibrary.org/docserver/c224dbeb-en.pdf?expires=1730041650&id=id&accname=guest&checksum=6717B0D94EE373655D9733F88B98A43F), which predicts the likelihood of a student answering a question correctly by assessing the difficulty of each question and how well it distinguishes between students of different ability levels. For example, if the question is deemed a relatively conceptually 'easy' question, and the estimated ability of the student is high, the model predicts a high probability of a correct response. PISA can determine if a question is 'easy' or 'hard' based on the statistical analysis of response patterns from a broad group of students, using IRT to estimate how challenging each question is relative to the separate proficiency levels.
+
+Looking at @fig-pvs retrieved from [Wu (2022)](https://www.edmeasurementsurveys.com/Ch14.html), the process starts with a prior distribution. This is an initial estimate of the student's proficiency based on background variables like socioeconomic status or parental education. This prior estimation serves as a rough starting point that as the students begin to answer questions, get fintuned as PISA updates this estimate using student responses and resulting in a posterior distribution. This updating distribution combines that initial prior estimate with the observed test results.
+
+After this, multiple imputed values are taken from this posterior distribution. Essentially, PISA generates plausible values that are a representation of the range of abilities a student [may reasonably have.](https://www.oecd-ilibrary.org/docserver/9789264056275-7-en.pdf?expires=1730036478&id=id&accname=guest&checksum=662C072FDF248EAFF7659869C306F91C#:~:text=It%20has%20been%20noted%20that,a%20student's%20%CE%B8%20is%20estimated.)
+
+
+![Prior and Posterior Distributions](images/pvs.png){#fig-pvs}
+
 
 ## How did the packages account for this?
+
+
+
+
+
+
+
+
 
 
 
@@ -165,7 +184,7 @@ Ultimately, while non-teachers exhibit more variability in individual scores, th
 
 The project had a smaller focus on understanding how teachers' mathematical proficiency compared to other professionals, driven largely by curiosity rather than formal research aims. The selection of professional categories was based on existing reports, and the analysis was conducted on the 2003 PISA cohort, the year with the largest sample of teachers. However this still had its limitations due to the smaller sample size of the relative professional groups within a total sample of 10,370, limiting the overall robustness of the findings.
 
-Despite this, as seen in @fig-professionals, teachers performed lower than most other professional groups in terms of average mathematical proficiency at age 15. Professions such as medical practioners, legal professionals, engineers and auditors scored higher on average, indicating better mathematical capability amongst these groups. However, teachers school higher than the 'Other' category, which represents the broader population to aligned with the specific professions of interest. This suggests that while teachers were not among the highest performing professional groups, they seemed to demonstrate better mathematical proficiency than the general cohort.
+Despite this, as seen in @fig-professionals, teachers performed lower than most other professional groups in terms of average mathematical proficiency at age 15. Professions such as medical practitioners, legal professionals, engineers and auditors scored higher on average, indicating better mathematical capability amongst these groups. However, teachers school higher than the 'Other' category, which represents the broader population to aligned with the specific professions of interest. This suggests that while teachers were not among the highest performing professional groups, they seemed to demonstrate better mathematical proficiency than the general cohort.
 
 Despite these findings, it is important to consider the larger confidence intervals observed for certain professional groups, such as legal professionals, engineers, and auditors. These wider intervals indicate greater uncertainty in the estimates and may result from factors like smaller sample sizes and higher variability within these groups.
 
