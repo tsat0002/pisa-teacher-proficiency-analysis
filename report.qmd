@@ -307,14 +307,14 @@ The more consistent performance among teachers is suggested by the slightly shor
 
 When comparing teachers to other professional groups, as seen in @fig-professionals, the analysis reveals that while future teachers performed better than the general population, they performed lower than medical practitioners, legal professionals, engineers, and auditors and performed quite similarly to midwifery and nursing professionals. This aligned with a preconceived idea that STEM professions would attract students with more confidence or proficiency in mathematics. However, the large confidence intervals observed for some professional groups highlight greater uncertainty of where the true average lies due to smaller sample sizes and potential variability within these groups.
 
-However, there are some considerations that are important to pay mind to upon the results of this analysis. Despite the relatively strong performance of teachers in mathematics, as aforementioned, effective teaching requires more than just content knowledge. Research frameworks emphasise that teachers must understand how to present content effectively, integrate it with the curriculum, and adapt it to diverse learning styles (Norton, 2018). Additionally, although we can see that individuals who became teachers in later life had a higher proficiency in mathematics when compared to the general population (save for the professions explored deeper), there are limitations to the analysis.
+Despite these findings, there are some considerations that are important to pay mind to upon the results of this analysis. Despite the relatively strong performance of teachers in mathematics, as aforementioned, effective teaching requires more than just content knowledge. Research frameworks emphasise that teachers must understand how to present content effectively, integrate it with the curriculum, and adapt it to diverse learning styles (Norton, 2018). Additionally, although we can see that individuals who became teachers in later life had a higher proficiency in mathematics when compared to the general population (save for the professions explored deeper), there are limitations to the analysis.
 
 
 ![Count of Teachers per Year](images/teachercount.png){#fig-teachercount}
 
 **Small sample size for teachers and professional groups:**
 
-The sample size for teachers as seen in @fig-teachercount and other professionals as seen in @tbl-professionals was relatively small, which limits the robustness of the findings. The smaller sample size is also associated with larger standard errors, increasing uncertainty in the estimated averages of those groups. The lack of statistical power due to small sample sizes may have affected the precision of the estimates, potentially leading to biased results or challenges in generalising the results.
+The sample size for teachers (@fig-teachercount) and other professionals (@tbl-professionals) was relatively small, which limits the robustness of the findings. The smaller sample size is also associated with larger standard errors, increasing uncertainty in the estimated averages of those groups. The lack of statistical power due to small sample sizes may have affected the precision of the estimates, potentially leading to biased results or challenges in generalising the results.
 
 **Attrition Rate in Longitudinal Data:**
 
@@ -326,9 +326,7 @@ As mentioned prior, while PISA tests part of the expected learning outcomes of f
 
 Additionally, PISA only tracks individuals from the age of 15 to 25, and this does not account for the many other ways individuals go into the pathway of being teachers. For example, mathematical proficiency can be enhanced through alternative pathways or lived work experience before the individual moved into teaching. This could also suggest that the analysis may not capture the full range of individuals who become teachers and their mathematical proficiency.
 
-**High Standard Error:**
-
-
+**Statistical significance**
 
 For the project, to determine whether differences in mathematical proficiency between teachers and non-teachers statistically significant, a series of Welch's t-tests were conducted for each year. A Welch's t-test was deemed sufficient for this analysis, as it accommodates differences variances and sample sizes between groups. The t-tests generally showed statistically significant differences in average scores, with teachers consistently outperforming non-teachers in the years analysed. However, this should be treated as preliminary statistical analysis due to limitations prior mentioned and methodological considerations behind the reasoning to not include the results of these t-tests include:
 
@@ -337,7 +335,6 @@ For the project, to determine whether differences in mathematical proficiency be
 -  **Normality assumption:** The t-test assumes a normal distribution of scores within each group, but this assumption may not hold, especially given the small teacher samples. This could affect the validity of the test results. As seen in @fig-probdist, which represents *only* the 2003 sample, the distribution of teacher scores (orange) shows slight skewness and a narrower spread, indicating potential deviations from normality. The reduced sample size may also underrepresent true variability among teacher scores, further complicating interpretation.
 
 Next steps could build upon this with the potential use of non-parametric tests or bootstrapping techniques.
-
 
 This analysis reveals that individuals who later became primary school teachers generally exhibit higher mathematical proficiency than non-teaching peers, consistently meeting or exceeding national standards. However, limitations such as smaller sample sizes, attrition rates, and PISA's narrow scope in terms of age and content coverage must be acknowledged.Despite these constraints, meaningful trends can be seen. In particular, teachers achieve stronger median scores and less variability. Yet, they still fall behind STEM professionals. 
 

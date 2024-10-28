@@ -6,17 +6,19 @@ Welcome to my project exploring mathematics proficiency in primary school teache
 
 * **LSAY_EDA_files:** Contains all the visualisations creating within the LSAY_EDA quarto document. Not all were used, and some were starting points for visualisations used in the report.
 
-* **R:** Folder containing set up R script with packages used in the LSAY_EDA quarto document. Included are R scripts that were utilised for other parts in the wider report, but not specific to my contribution to the project (01-dummy_charts.R and 03-lsay.R).
+* **R:** Folder containing set up R script with packages used in the LSAY_EDA quarto document. In the source repository linked up, included are R scripts that were utilised for other parts in the wider report, but not specific to my contribution to the project (01-dummy_charts.R and 03-lsay.R).
 
-* **LSAY_EDA.qmd:** The Quarto document containing the analysis done on the LSAY/PISA data. This Quarto documents contains all the code used for my analysis with some description surrounding code for  readibility.
+* **LSAY_EDA.qmd:** The Quarto document containing the LSAY/PISA data analysis. This Quarto document contains all the code used for my analysis with some description surrounding the code for readability.
 
 * **report.qmd:** Contains my report content based on the analysis and my contributions to the project.
+
+**presentation.pdf:** The presentation version of this project.
 
 Data files were omitted due to being private data.
 
 ## Project Overview
 
-This project investigates the math proficiency of individuals who later became primary school teachers in Australia, contributing to a Grattan Institute's report on teacher proficiency and how this translates to being able to effectively teach mathematics. It examines teacher performance over time, comparing them to other professionals and the general population. It aims to provide a supplementary understanding on the the proficiency of mathematics teachers within this sample to as a wider goal, inform professional development initiatives and policy recommendations for improving math education outcomes.
+This project investigates the math proficiency of individuals who later became primary school teachers in Australia, contributing to a Grattan Institute's report on teacher proficiency and how this translates to being able to effectively teach mathematics. It examines teacher performance over time, comparing them to other professionals and the general population. It aims to provide a supplementary understanding of the proficiency of mathematics teachers within this sample to, as a wider goal, inform professional development initiatives and policy recommendations for improving math education outcomes.
 
 ### Methodology
 
