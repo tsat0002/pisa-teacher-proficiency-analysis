@@ -8,7 +8,7 @@ Welcome to my project exploring mathematics proficiency in primary school teache
 
 * **R:** Folder containing set up R script with packages used in the LSAY_EDA quarto document. In the source repository linked up, included are R scripts that were utilised for other parts in the wider report, but not specific to my contribution to the project (01-dummy_charts.R and 03-lsay.R).
 
-* **LSAY_EDA.qmd:** The Quarto document containing the LSAY/PISA data analysis. This Quarto document contains all the code used for my analysis with some description surrounding the code for readability.
+* **LSAY_EDA.qmd:** The Quarto document containing the LSAY/PISA data analysis. This Quarto document contains all the code used for my analysis with some description surrounding the code for readability. Ensure relevant data is downloaded to successfully knit this document (view below).
 
 * **report.qmd:** Contains my report content based on the analysis and my contributions to the project.
 
