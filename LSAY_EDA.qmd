@@ -18,7 +18,7 @@ editor_options:
 #| messages: false
 
 source("R/00-setup.R")
-# reading in the data
+# reading in the data for the different PISA years
 LSAY2003 <- read_dta("data/lsay_data/au.edu.anu.ada.ddi.01111_v7.1_unrestricted.dta")
 LSAY2006 <- read_dta("data/lsay_data/au.edu.anu.ada.ddi.01137_v10.1_unrestricted.dta")
 LSAY2009 <- read_dta("data/lsay_data/au.edu.anu.ada.ddi.30023v9_unrestricted.dta")
@@ -26,7 +26,7 @@ LSAY2015 <- read_dta("data/lsay_data/2_LSAY_Y15_2022_STATA_01392_general.dta")
 
 ```
 
-## LSAY 2003 cohort
+# LSAY 2003 cohort
 
 ### How many primary school teachers are in the data set?
 
@@ -225,6 +225,8 @@ ggplot(data = data.frame(x = c(-0, 1000)),
 
 ```
 
+
+
 ```{r}
 # creating columns to indicate if teacher was proficient or not
 LSAY2003_proficiency <- 
@@ -242,12 +244,13 @@ LSAY2003_agprof <- Rrepest::Rrepest(data = LSAY2003_proficiency,
 
 ```
 
-## LSAY 2006 cohort
+# LSAY 2006 cohort
 
 ### How many people in the 2006 were studying primary school teaching?
 
 Looking for variables linked with the question: "What is your main area of study or training in this (apprenticeship/traineeship/course)?"
 
+These variables included:
 -   LBC087, LCC087, LDC087, LEC087, LFC087, LGC088, LHC088, LIC088, LJC088, LKC088
 
 ```{r}
@@ -379,7 +382,9 @@ LSAY2006_agprof
 
 ### How many people in the 2009 cohort studied teaching?
 
-"What is your main area of study or training in this (apprenceship/traineeship/course)?" \* LBC089, LCC088, LDC088, LEC088, LFC088, LGC088, LHC088, LIC088, LJC088, LKC088
+"What is your main area of study or training in this (apprenceship/traineeship/course)?" 
+
+* LBC089, LCC088, LDC088, LEC088, LFC088, LGC088, LHC088, LIC088, LJC088, LKC088
 
 Then filtering for ASCED code `70103` (Teacher Education: Primary)
 
@@ -502,7 +507,8 @@ LSAY2009_agprof <- Rrepest::Rrepest(data = LSAY2009_proficiency,
 
 ### How many people in the 2015 cohort studied teaching?
 
-"What is your main area of study or training in this (apprenceship/traineeship/course)?" \* LCC088, LDC088, LEC088, LFC088, LGC088, LHC088
+"What is your main area of study or training in this (apprenceship/traineeship/course)?" 
+* LCC088, LDC088, LEC088, LFC088, LGC088, LHC088
 
 ```{r}
 
@@ -526,7 +532,9 @@ studying_teachers_2015
 
 ### How many teachers in the 2015 cohort?
 
-Looking for code `2412` in variables related to the question: "What kind of work do you do in this job?" LCD022, LDD022, LED022, LFD025, LGD022, LHD022
+Looking for code `2412` in variables related to the question: "What kind of work do you do in this job?"
+
+* LCD022, LDD022, LED022, LFD025, LGD022, LHD022
 
 ```{r}
 
@@ -702,8 +710,6 @@ data_2015 <- pisa.per.pv(pvlabel = paste0("PV", 1:10, "MATH"), data = LSAY2015_t
 pisa.mean.pv(pvlabel = paste0("PV", 1:5, "MATH"), data = LSAY2003_teachflag, by = "teacher")
 
 
-
-
 ```
 
 ```{r}
@@ -728,6 +734,9 @@ base_chart_2015 +
   grattan_y_continuous()
 ```
 
+### Statistical Significance
+
+Doing some statistical t-tests to see if differences are statistically significant.
 ```{r}
 # Manual t-test calculation for 2003
 mean_FALSE <- 530.3
@@ -751,7 +760,6 @@ t_value
 
 ```{r}
 # Manual t-test calculation for 2006
-#pisa.mean.pv(pvlabel = paste0("PV", 1:5, "MATH"), data = LSAY2006_teachflag, by = "teacher")
 
 mean_FALSE <- 518.6
 mean_TRUE <- 550.7
@@ -775,9 +783,6 @@ t_value
 ```{r}
 # Manual t-test calculation for 2009
 
-#pisa.mean.pv(pvlabel = paste0("PV", 1:5, "MATH"), data = LSAY2009_teachflag, by = "teacher")
-#pisa2009_avg_and_mean
-
 mean_FALSE <- 513.7
 mean_TRUE <- 552.7
 sd_FALSE <- 95.1
@@ -799,7 +804,7 @@ t_value
 
 ```{r}
 # Manual t-test calculation for 2015
-# pisa.mean.pv(pvlabel = paste0("PV", 1:5, "MATH"), data = LSAY2015_teachflag, by = "teacher")
+
 mean_FALSE <- 494.0
 mean_TRUE <- 519.4
 sd_FALSE <- 92.5
@@ -945,11 +950,10 @@ profession_visualisation <- professionals_vis %>%
   grattan_colour_manual(n = 1, faded_level= 5) +
   theme(axis.line = element_line(colour = "grey80"))
 
-# check_chart_aspect_ratio(profession_visualisation, type = "fullslide")
+
 
 ```
 
-https://scc.ms.unimelb.edu.au/resources/graphs-for-statistical-analysis/graphs \* how to show standard error/explain simply
 
 ```{r}
 #70th percentile
@@ -996,16 +1000,6 @@ distributions_2003 <- visualisation_2003 |>
   annotate(geom = "text", y = 0.75, x = 475, colour = "black", vjust = 0.5, hjust = -.15, label = "Proficiency benchmark") +
  scale_y_discrete(labels = c("TRUE" = "Teacher", "FALSE" = "Non-Teacher"))
 
-# combined_label <- glue("
-#   Mean SE (Teachers): {round(visualisation_2003$s.e[visualisation_2003$teacher == TRUE], 2)}\n
-#   SD SE (Teachers): {round(visualisation_2003$SD_s.e[visualisation_2003$teacher == TRUE], 2)}\n
-#   Mean SE (Non-Teachers): {round(visualisation_2003$s.e[visualisation_2003$teacher == FALSE], 2)}\n
-#   SD SE (Non-Teachers): {round(visualisation_2003$SD_s.e[visualisation_2003$teacher == FALSE], 2)}
-# ")
-
-# Add the combined label as a single annotation
-# distributions_2003 <- distributions_2003 +
-#   annotate(geom = "label", x = 650, y = 0.62, size = 2.8, color = "black", label = combined_label, hjust = 0, fill = "burlywood1")
 
 teacher_non_teacher_distributions_2003 <-  distributions_2003 +
   theme_grattan(chart_type = "bar", flipped = T) +
@@ -1015,11 +1009,6 @@ teacher_non_teacher_distributions_2003 <-  distributions_2003 +
 
 teacher_non_teacher_distributions_2003
    
-# check_chart_aspect_ratio()
-
-#grattan_save_pptx(filename = "atlas/StatInterval_Plot2003.pptx")
-
-
 
 ```
 
@@ -1061,9 +1050,6 @@ distributions_2006 <- distributions_2006 +
   grattan_colour_manual(3, faded_level = 2) +
    theme(axis.line = element_line(colour = "grey80")) 
 
-
-# grattan_save_pptx(filename = "atlas/StatInterval_Plot2006.pptx")
-
 ```
 
 ```{r}
@@ -1103,10 +1089,7 @@ distributions_2009 <- distributions_2009 +
   theme(plot.subtitle = element_markdown(lineheight = 1.1), legend.position = "bottom") +
   grattan_colour_manual(3, faded_level = 2) +
    theme(axis.line = element_line(colour = "grey80"))
-   
-
-
-# grattan_save_pptx(filename = "atlas/StatInterval_Plot2009.pptx")
+  
 
 ```
 
@@ -1149,13 +1132,11 @@ distributions_2015 <- distributions_2015 +
    
 
 
-# grattan_save_pptx(filename = "atlas/StatInterval_Plot2015.pptx")
-
 ```
 
-# WEIGHTED AVERAGE ACROSS THE YEARS
+# CREATING VISUALISATIONS FOR WEIGHTED AVERAGE ACROSS THE YEARS
 
-Get the aggregate percentage of teachers who are proficient overtime. Nice to have: Compare this to all non-teachers and other professionals.
+Get the aggregate percentage of teachers who are proficient overtime.
 
 ```{r}
 # adding years to the df
@@ -1355,7 +1336,7 @@ teacher_fact <- teacher_fact +
 teacher_fact
 ```
 
-facet by year \^
+
 
 ```{r}
 # Save key charts
@@ -1369,3 +1350,7 @@ grattan_save_pptx(plot_list_for_export, filename = "atlas/LSAY_plots.pptx")
 
 grattan_save_pptx(teacher_count_plot, filename = "atlas/teacher_count.pptx")
 ```
+
+
+
+
