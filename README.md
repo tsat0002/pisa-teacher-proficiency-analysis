@@ -49,6 +49,10 @@ The data can be requested for from the [Dataverse website](https://dataverse.ada
 
 Please ensure to save this in a 'data' folder in the project. 
 
-In order to recreate some of the visualisations included in the LSAY_EDA.qmd, please ensure all packages in R/00-setup.R are installed. In particular, the [grattantheme](https://github.com/grattan/grattantheme) and [ggdirectlabel](https://github.com/MattCowgill/ggdirectlabel).
+## Packages and Software 
 
-After this, you will be able to knit the LSAY_EDA.qmd file utilised for findings discussed in the report.
+R and RStudio both are required (latest versions preferable).
+Please ensure all packages in R/00-setup.R are installed.
+
+The [grattantheme](https://github.com/grattan/grattantheme) and [ggdirectlabel](https://github.com/MattCowgill/ggdirectlabel) packages will also be necessary to recreate some visualisations.
+
