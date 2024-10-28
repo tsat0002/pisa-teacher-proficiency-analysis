@@ -47,7 +47,7 @@ Understanding these trends is crucial for targeting professional development and
 
 After cloning the repository, access to the LSAY data requires a formal request and registration process as managed by the Australian Data Archive (ADA). To see steps on how to acquire the data, view [here](https://www.lsay.edu.au/data/access).  This analysis utilised the available STATA versions of the data.
 
-The data can be requested for from the [Dataverse website](https://dataverse.ada.edu.au/dataverse/lsay).
+The data can be requested from the [Dataverse website](https://dataverse.ada.edu.au/dataverse/lsay).
 
 Please ensure to save this in a 'data' folder in the project. 
 
