@@ -18,7 +18,7 @@ Data files were omitted due to being private data.
 
 ## Project Overview
 
-This project investigates the math proficiency of individuals who later became primary school teachers in Australia, contributing to a Grattan Institute's report on teacher proficiency and how this translates to being able to effectively teach mathematics. It examines teacher performance over time, comparing them to other professionals and the general population. It aims to provide a supplementary understanding of the proficiency of mathematics teachers within this sample to, as a wider goal, inform professional development initiatives and policy recommendations for improving math education outcomes.
+This project investigates the math proficiency of individuals who later became primary school teachers in Australia, contributing to Grattan Institute's report on teacher proficiency and how this translates to being able to effectively teach mathematics. It examines teacher performance over time, comparing them to other professionals and the general population. It aims to provide a supplementary understanding of teachers proficiency in mathematics within this sample to, as a wider goal, inform professional development initiatives and policy recommendations for improving math education outcomes.
 
 ### Methodology
 
