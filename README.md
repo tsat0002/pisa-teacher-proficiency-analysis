@@ -12,7 +12,7 @@ Welcome to my project exploring mathematics proficiency in primary school teache
 
 * **report.qmd:** Contains my report content based on the analysis and my contributions to the project.
 
-**presentation.pdf:** The presentation version of this project.
+* **presentation.pdf:** The presentation version of this project.
 
 Data files were omitted due to being private data.
 
@@ -26,11 +26,11 @@ The analysis draws from LSAY cohorts of 2003, 2006, 2009, and 2015, linked to PI
 
 The analysis aims to answer:
 
-* How do teachers’ math skills evolve over time?
+* How do teachers’ perform on average across the years compared to non-teachers?
 
 * How do teachers compare to other professionals?
 
-* How do teachers perform relative to the general population?
+* How do teachers perform relative to the general population each year?
 
 Understanding these trends is crucial for targeting professional development and improving teacher effectiveness, which ultimately enhances student outcomes.
 
