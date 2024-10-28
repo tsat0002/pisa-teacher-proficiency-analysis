@@ -47,6 +47,8 @@ After cloning the repository, access to the LSAY data requires a formal request 
 
 The data can be requested for from the [Dataverse website](https://dataverse.ada.edu.au/dataverse/lsay).
 
-Please ensure to save this in a 'data' folder in the project.
+Please ensure to save this in a 'data' folder in the project. 
 
-In order to recreate some of the visualisations included in the LSAY_EDA.qmd, please ensure packages in R/00-setup.R are installed. In particular, the [grattantheme](https://github.com/grattan/grattantheme) and [ggdirectlabel](https://github.com/MattCowgill/ggdirectlabel).
+In order to recreate some of the visualisations included in the LSAY_EDA.qmd, please ensure all packages in R/00-setup.R are installed. In particular, the [grattantheme](https://github.com/grattan/grattantheme) and [ggdirectlabel](https://github.com/MattCowgill/ggdirectlabel).
+
+After this, you will be able to knit the LSAY_EDA.qmd file utilised for findings discussed in the report.
