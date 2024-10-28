@@ -41,7 +41,7 @@ Understanding these trends is crucial for targeting professional development and
 
 * **Comparison to Professionals:** Teachers perform lower than STEM professionals but better than the general population.
 
-* **Score Consistency:** Teachers exhibit less variability in scores compared to non-teachers, though the small sample size of teachers limits statistical power.
+* **Teachers performed better each year:** Teachers exhibit less variability in scores compared to non-teachers, and performed better than non-teachers in each year analysed.
 
 # Reproducibility of Results
 
