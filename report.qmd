@@ -1,40 +1,50 @@
 ---
 title: "Teaching Math Effectively: Insights from LSAY and PISA on Primary Teacher Proficiency"
 author: Tashya Sathyajit (29672732)
-format: pdf
-number-sections: true
+format: 
+  pdf:
+    number-sections: true
+    toc: true
+    include-in-header:
+      text: |
+        \usepackage{lipsum}
+        \usepackage{setspace}
+        \onehalfspacing
+        \linespread{2}
+    df-print: kable
+    highlight-style: zenburn
+fontsize: 12pt
+geometry: margin=1in
 execute: 
   echo: false
   warning: false
   message: false
   wordcount: true
-toc: true
 ---
 
-```{r}
 
+```{r}
+# necessary packages
 library(dplyr)
 library(kableExtra)
 library(knitr)
-
-
 ```
 
 # Abstract
 
-This report investigates the mathematics performance of individuals who became primary school teachers in Australia, using the Longitudinal Surveys of Australian Youth (LSAY) and the Program For International Student Assessment (PISA) datasets. This analysis was done for the contribution to Grattan Institute's report on teacher proficiency in mathematics. Results show that teachers consistently have a higher average math proficiency than non-teachers over time, with better performance across PISA testing years. However, they tend to score lower than professionals in fields like medicine, law, and engineering. Limitations include disproportionate teacher counts in some PISA years, potentional attrition bias, confounding variables such as socioeconomic status, and the evolving nature of math proficiency over time.
+This report investigates the mathematics performance of individuals who became primary school teachers in Australia, using the Longitudinal Surveys of Australian Youth (LSAY) and the Program For International Student Assessment (PISA) datasets. This analysis was done for the contribution to Grattan Institute's report on teacher proficiency in mathematics. Results show that teachers consistently have a higher average math proficiency than non-teachers over time, with better performance across PISA testing years. However, they tend to score lower than professionals, particularly in STEM fields. Limitations include disproportionate teacher counts in some PISA years, potential attrition bias, confounding variables such as socioeconomic status, and the evolving nature of math proficiency over time.
 
 # Background and motivation
 
-Over the past two decades, Australian students' performance in the mathematics components of international assessments like PISA have shown [significant declines](https://d1wqtxts1xzle7.cloudfront.net/57141870/Morsy__Khavenson__Carnoy__2018._How_international_tests_fail_to_inform_policy-libre.pdf?1533581345=&response-content-disposition=inline%3B+filename%3DHow_international_tests_fail_to_inform_p.pdf&Expires=1729912030&Signature=ApSPqfXhzY0QgniYXnR-sD6x-YnbhxaJd20T1EGQdRChDRaVLH-gqFf3iWzu9H~0Yv4ad2ls6nQvwxvAa5YzlyrwLK4YPd8N8jlhB0~nFbF~5CEqKBhG5RCthm5b2-ynja8eJSokxsfEEVjy-HiX3RCgxfZpE7UhYVAdOuqehKV4s3gNrEtGTd82J4RGt8VapK0MT6B~D066LmR~nR44sccPY7sX6UdqPg4sXkBtQKASI2qF4uvWLM5qkgvUHmsTBQvfEYNCc1NXe-3AzfLDwrsbVzszbb7J4-N8SEhDEXF3JRyJWXPubgeh8csxnYa73FFNbrkCcQnNiU4JIYgrXQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) as seen in @fig-pisadecline. These declines persist even after adjusting for changes in family academic resources, affecting students across all states, social groups, and school types (albeit with variations).This trend has raised concerns among educators, researchers and policymakers as mathematics proficiency is not only foundational for broader academic success but crucial for Australia's future economic competitiveness.
+Over the past two decades, Australian students' performance in the mathematics components of international assessments like PISA have shown significant declines (Morsy et al., 2018) as seen in @fig-pisadecline. These declines persist even after adjusting for changes in family academic resources, affecting students across all states, social groups, and school types (albeit with variations). This trend has raised concerns among educators, researchers and policymakers as mathematics proficiency is not only foundational for broader academic success but crucial for Australia's future economic competitiveness.
 
-Research indicates a positive correlation between teacher mathematics knowledge (as assessed through certification exams or subject-matter tests) and [student achievement](https://dash.harvard.edu/bitstream/handle/1/37364487/Hill_Rowan_Ball_050405.pdf?sequence=2&isAllowed=y). This underscores the importance of qualified primary school teachers in improving children's math outcomes, supporting the notion that teachers with stronger mathematical knowledge are [likely to teach it more effectively.](https://www.researchgate.net/profile/Stephen-Norton-5/publication/322991092_The_relationship_between_mathematical_content_knowledge_and_mathematical_pedagogical_content_knowledge_of_prospective_primary_teachers/links/5a7bb457aca27233575b1e9d/The-relationship-between-mathematical-content-knowledge-and-mathematical-pedagogical-content-knowledge-of-prospective-primary-teachers.pdf)
+Research indicates a positive correlation between teacher mathematics knowledge (as assessed through certification exams or subject-matter tests) and student achievement (Hill et al., 2005) . This underscores the importance of qualified primary school teachers in improving children's math outcomes, supporting the notion that teachers with stronger mathematical knowledge are likely to teach it more effectively (Norton, 2019).
 
-While research consistently suggests that a teacher's proficiency in mathematics is a crucial determinant of their effectiveness in the classroom, impacting student achievement directly (Morsy et al. 2018) the relationship between a teacher's subject knowledge and student performance is complex, and extends beyond the teacher's own content mastery. It involves the ability to translate that knowledge into effective pedagogical practices, adapt to curriculum needs, engage in productive professional conversations and address student misconceptions. When students are taught by teachers who have little mathematical content *and* pedagogical content knowledge, learning suffers (Baumert et al., 2010; Hill et al., 2005).
+While research consistently suggests that a teacher's proficiency in mathematics is a crucial determinant of their effectiveness in the classroom, impacting student achievement directly (Morsy et al., 2018) the relationship between a teacher's subject knowledge and student performance is complex, and extends beyond the teacher's own content mastery. It involves the ability to translate that knowledge into effective pedagogical practices, adapt to curriculum needs, engage in productive professional conversations and address student misconceptions. When students are taught by teachers who have little mathematical content *and* pedagogical content knowledge, learning suffers (Baumert et al., 2010; Hill et al., 2005).
 
-Despite these nuances, the positive correlation between teachers' competence in mathematics and student achievement is clear (Hill et al., (2005)). While this correlation does not strictly imply causation, understanding the mathematics proficiency of primary school teachers remains a critical step in improving student outcomes.
+Despite these nuances, the positive correlation between teachers' competence in mathematics and student achievement is clear (Hill et al., 2005). While this correlation does not strictly imply causation, understanding the mathematics proficiency of primary school teachers remains a critical step in improving student outcomes.
 
-This analysis seeks to deepen the understanding of the mathematics proficiency of individuals who eventually become primary school teachers in Australia by leveraging longitudinal data from PISA and LSAY. By examining trends over time and comparing the math performance of primary school teachers, the broader Australian population and other professionals, this study aims to provide insights into the readiness of teachers to deliver effective math instruction. Understanding these trend is crucial, as they provide insights into the mathematics performance of individuals who later became primary school teachers, and may assist in guiding professional development initiatives focused on targeting and strengthening the mathematics proficiency of primary school teachers, ultimately leading to improved student outcomes across Australia.
+This analysis seeks to deepen the understanding of the mathematics proficiency of individuals who eventually become primary school teachers in Australia by leveraging longitudinal data from PISA and LSAY. By examining trends over time and comparing the math performance of primary school teachers, the broader Australian population and other professionals, this study aims to provide insights into the readiness of teachers to deliver effective math instruction. Understanding these trends is crucial, as they provide insights into the mathematics performance of individuals who later became primary school teachers, and may assist in guiding professional development initiatives focused on targeting and strengthening the mathematics proficiency of primary school teachers, ultimately leading to improved student outcomes across Australia.
 
 
 ![Decline in PISA Scores Across the Years](images/pisadecline.png){#fig-pisadecline}
@@ -43,23 +53,23 @@ This analysis seeks to deepen the understanding of the mathematics proficiency o
 
 # Objectives and significance
 
-The primary objectives of this analysis was to utilise longitudinal survey data to understand the mathematics proficiency of students who eventually became primary school teachers in Australia. Using the LSAY and PISA datasets, the analysis seeks to address three main questions:
+The primary objective of this analysis was to utilise longitudinal survey data to understand the mathematics proficiency of students who eventually became primary school teachers in Australia. Using the LSAY and PISA datasets, the analysis seeks to address three main questions:
 
 1.  **Teacher performance over time:** How well did individuals who became primary school teachers perform in mathematics across the years?
 2.  **Comparison to other Professionals:** How are they performing in comparison to other 'professionals'?
-3.  **Comparison to the General Population:** How do teachers' math scores compare to the rest of the sample (non primary school teachers)?
+3.  **Comparison to the General Population:** How do teachers' math scores compare to the rest of the sample (non-primary school teachers)?
 
 This analysis is significant as it provides critical insights into the math skills of individuals who become primary school teachers, a factor that can directly impact student outcomes. By identifying trends and proficiency gaps, the analysis can allow for a deeper understanding of the performance of primary school teachers in Australia and inform potential policy recommendations. 
 
 # Methodology
 
-Data was sourced from multiple LSAY cohorts (2003, 2006, 2009 and 2015), each containing demographic data from student responses and their linked performance in PISA. Data was selected from these years because post 2003, LSAY participants were recruited from schools that also took part in PISA, allowing for the linkage of PISA scores to LSAY data.
+Data was sourced from multiple LSAY cohorts: 2003, 2006, 2009 and 2015. Each dataset contains demographic data from student responses and their linked performance in PISA. These years were selected because, from 2003 onwards, LSAY participants were recruited from schools that also took part in PISA, allowing for the linkage of PISA scores to LSAY data.
 
 ## How did we identify primary school teachers?
 
-For each cohort, variables relating to kind of work were selected for each wave of LSAY data aforementioned. These were located using the LSAY data dictionary sourced [here.](https://www.lsay.edu.au/data/lsay-data-dictionary/data-dictionary)
+To identify primary school teachers for each cohort, we examined variables related to occupation across each LSAY cohort. The [data dictionary](https://www.lsay.edu.au/data/lsay-data-dictionary/data-dictionary) was used to locate the relevant variables, as found in @tbl-kow. These variables correspond to responses about the type of work the respondents did.
 
-To identify primary school teachers, we used the variables found in @tbl-kow. These variables were linked to questions regarding the kind of work the respondent did in their job. These variables were selected and a flag was created separating individuals who responded with ANZSCO code `2412` which corresponds to the occupation of a primary school teacher. This flag was used to identify individuals who eventually became primary school teachers, and those that did not respond with this code were classified as non-teachers.
+Individuals were flagged as primary school teachers if they reported an ANZSCO code of `2412`, which represents primary school teachers. This flag distinguished those who eventually became primary school teachers from those who did not. Respondents with other occupation codes were classified as non-teachers.
 
 ```{r}
 #| label: tbl-kow
@@ -85,11 +95,11 @@ kable(kow,
 
 ```
 
-## What did these teachers study? 
+### What did these teachers study? 
 
-For exploratory understanding, we also wanted to see the area of study of individuals who later became teachers. We did this by utilising the variables seen in @tbl-aos, which related to demographic questions about what the respondent's area of study was. We again filtered the student IDs of these individuals with those who responded with the [Australian Standard Classification of Education (ASCED)](https://www.abs.gov.au/statistics/classifications/australian-standard-classification-education-asced/latest-release) code `70103` for primary school education. 
+To understand the educational backgrounds of individuals who later became primary school teachers, fields of study were analysed using variables detailed in @tbl-aos. The analysis focused on identifying whether respondents pursued primary school education, coded as `7301` in accordance with the [Australian Standard Classification of Education (ASCED)](https://www.abs.gov.au/statistics/classifications/australian-standard-classification-education-asced/latest-release).
 
-After doing this, we also did a reverse in seeing what the individuals who became primary school teachers studied primary to entering that field of work. Using the student IDs of those who responded as primary school teachers, we looked again at the variables for area of study across the waves and explored what ASCED scores they provided. The area of studies were consistent with the pathway to becoming a primary school teacher as seen in
+Additionally, the analysis explored whether respondents who became teachers had previously studied fields outside of education before transitioning to teaching. This was done with a similar approach of examining ASCED scores reported across waves of those who were identified as teachers. @tbl-aosunique provides a summary of the fields of study identified and highlights cases where individuals shifted from other fields to primary education.
 
 ```{r}
 #| label: tbl-aos
@@ -116,6 +126,7 @@ kable(aos,
 
 
 ```{r}
+#| label: tbl-aosunique
 aos_unique <- data.frame(
   Code = c(
     70101, 70103, 70109, 70199, 70115, 90503, 91703, 92101, 100101, 80101,
@@ -164,9 +175,9 @@ kable(aos_unique,
 
 ## How did we explore teacher performance relative to other professionals?
 
-This part of the analysis was driven more by curiosity than formal research aims, exploring how primary school teachers' mathematics proficiency compares to that of other professionals. Due to this, the analysis focused only on the 2003 PISA cohort which had the largest sample of teachers (view @fig-teachercount) and the final wave of that cohort. By examining the last wave of this cohort, the analysis captures participants' final professional roles, though this approach results in a lower teacher count than the total count for the entire 2003 cohort as seen in @tbl-professionals.
+This part of the analysis was driven more by curiosity than formal research aims, exploring how primary school teachers' mathematics proficiency compares to that of other professionals. Due to this, the analysis focused only on the 2003 PISA cohort which had the largest sample of teachers (view @fig-teachercount) and of that cohort, the final wave. By examining the last wave of this cohort, the analysis captures participants' final professional roles, though this approach results in a lower teacher count than the total count for the entire 2003 cohort as seen in @tbl-professionals.
 
-To define professional categories, the analysis used the ANZSCO codes sourced from the Australian Bureau of Statistics [website](https://www.abs.gov.au/statistics/classifications/anzsco-australian-and-new-zealand-standard-classification-occupations/latest-release). The respondent's occupation code response to variable `LKD029` corresponding to LSAY question relating to kind of work was used to identify whether they belonged to one of the professional groups of interest. A new variable was established which created a flag for individuals based on their occuption code (e.g. Teachers coded as '1', while other professional groups were coded '2' to '6' in accordance to their ANZSCO code). Afer this the `Rrepest` package was used to estimate the weighted average proficiency scores and standard deviations for each group, using plausible values and their respective weights for mathematical scores. 
+To define professional categories, the analysis used the ANZSCO codes sourced from the Australian Bureau of Statistics [website](https://www.abs.gov.au/statistics/classifications/anzsco-australian-and-new-zealand-standard-classification-occupations/latest-release). The respondent's occupation code response to variable `LKD029` corresponding to LSAY question relating to kind of work was used to identify whether they belonged to one of the professional groups of interest. A new variable was established which created a flag for individuals based on their occupation code (e.g. Teachers coded as '1', while other professional groups were coded '2' to '6' in accordance to their ANZSCO code). 
 
 
 ```{r}
@@ -199,44 +210,49 @@ professionals_table %>%
 
 ## How did we complete the Mathematical Proficiency Analysis?
 
-The mathematics performance of primary school teachers was assessed using PISA scores. The analysis aimed to compare teachers' scores against the national proficiency standard which has been set at a proficiency level 3 or [482 PISA points](https://www.parliament.nsw.gov.au/researchpapers/Documents/PISA%20paper.pdf). The analysis incorporated survey weights to ensure representativeness of the data and address differences in sample sizes across cohorts. It also had to account for the use of plausible values undertaken by PISA.
+The mathematics performance of primary school teachers was assessed using PISA scores. The analysis aimed to compare teachers' scores against the national proficiency standard which has been set at a [proficiency level 3](https://www.oecd-ilibrary.org/sites/5f07c754-en/1/2/7/index.html?itemId=/content/publication/5f07c754-en&_csp_=6aa84fb981b29e81b35b3f982f80670e&itemIGO=oecd&itemContentType=book) or [482 PISA points](https://www.parliament.nsw.gov.au/researchpapers/Documents/PISA%20paper.pdf). The analysis incorporated survey weights to ensure representativeness of the data and address differences in sample sizes across cohorts. It also had to account for the use of plausible values undertaken by PISA.
 
+::: {.callout-note}
+## **At Level 3 Proficiency in Mathematics**
+"At Level 3, students can execute clearly described procedures, including those that require sequential decisions. Their interpretations are sufficiently sound to be a base for building a simple model or for selecting and applying simple problem-solving strategies. Students at this level can interpret and use representations based on different information sources and reason directly from them. They typically show some ability to handle percentages, fractions and decimal numbers, and to work with proportional relationships. Their solutions reflect that they have engaged in basic interpretation and reasoning."
+:::
 
 ## Working with Sampling Weights and Plausible Values Accurately
 
-To handle PISA's plausible values and sampling weights, the analysis utilised [`intsvy`](https://github.com/eldafani/intsvy) and [`rrepest`](https://github.com/cran/Rrepest) R packages, which are designed to accurately estimate statistics under the complex survey design used by PISA.
 
-These allowed for the calculation of mean scores, confidence intervals and standard errors while accounting for the inherent variability within the dataset.
+International surveys such as PISA report student performance using plausible values (PVs). Plausible values are a statistical technique that represents uncertainty in measurements by generating a range of possible values a student may have obtained as opposed to a single estimate. This approach assists in conveying the variability in student performance more accurately, considering that not all students answer the same questions (PISA is a large test) or have the same background information. 
 
-**But what are plausible values?**
+To derive PVs, PISA uses [Item Response Theory (IRT)](https://www.oecd-ilibrary.org/docserver/c224dbeb-en.pdf?expires=1730041650&id=id&accname=guest&checksum=6717B0D94EE373655D9733F88B98A43F), which predicts the likelihood of a student answering a question correctly by assessing the difficulty of each question and how well it distinguishes between students of different ability levels. For example, if the question is deemed a relatively conceptually 'easy' question, and the estimated ability of the student is high, the model predicts a high probability of a correct response. PISA can determine if a question is 'easy' or 'hard' based on the statistical analysis of response patterns from a broad group of students, using IRT to estimate how challenging each question is relative to the separate proficiency levels, as can be seen [here](https://www.oecd-ilibrary.org/docserver/02f44b44-en.pdf?expires=1730101739&id=id&accname=guest&checksum=903DBFF4325A31EBBCC87BE873992B35) (OECD, 2023).
 
-International surveys such as PISA report student performance using plausible values (PVs). Plausible values are a statistical technique that represent uncertainty in measurements by generating a range of possible values a student may have obtained as opposed to a single estimate. This approach assists in conveying the variability in student performance more accurately, considering that not all students answer the same questions (PISA is a large test) or have the same background information. 
+Looking at @fig-pvs retrieved from [Wu (2022)](https://www.edmeasurementsurveys.com/Ch14.html), the process starts with a prior distribution. This is an initial estimate of the student's proficiency based on background variables like socioeconomic status or parental education. This prior estimation serves as a rough starting point that as the students begin to answer questions, get finetuned as PISA updates this estimate using student responses and resulting in a posterior distribution. This updating distribution combines that initial prior estimate with the observed test results.
 
-To derive PVs, PISA uses [Item Response Theory (IRT)](https://www.oecd-ilibrary.org/docserver/c224dbeb-en.pdf?expires=1730041650&id=id&accname=guest&checksum=6717B0D94EE373655D9733F88B98A43F), which predicts the likelihood of a student answering a question correctly by assessing the difficulty of each question and how well it distinguishes between students of different ability levels. For example, if the question is deemed a relatively conceptually 'easy' question, and the estimated ability of the student is high, the model predicts a high probability of a correct response. PISA can determine if a question is 'easy' or 'hard' based on the statistical analysis of response patterns from a broad group of students, using IRT to estimate how challenging each question is relative to the separate proficiency levels.
-
-Looking at @fig-pvs retrieved from [Wu (2022)](https://www.edmeasurementsurveys.com/Ch14.html), the process starts with a prior distribution. This is an initial estimate of the student's proficiency based on background variables like socioeconomic status or parental education. This prior estimation serves as a rough starting point that as the students begin to answer questions, get fintuned as PISA updates this estimate using student responses and resulting in a posterior distribution. This updating distribution combines that initial prior estimate with the observed test results.
-
-After this, multiple imputed values are taken from this posterior distribution. Essentially, PISA generates plausible values that are a representation of the range of abilities a student [may reasonably have.](https://www.oecd-ilibrary.org/docserver/9789264056275-7-en.pdf?expires=1730036478&id=id&accname=guest&checksum=662C072FDF248EAFF7659869C306F91C#:~:text=It%20has%20been%20noted%20that,a%20student's%20%CE%B8%20is%20estimated.)
+After this, multiple imputed values are taken from this posterior distribution. These plausible values are thus a representation of the range of abilities a student may reasonably have (OECD, 2009) and are normally five to 10 plausible values per student for each domain.
 
 
 ![Prior and Posterior Distributions](images/pvs.png){#fig-pvs}
 
+The [`intsvy`](https://github.com/eldafani/intsvy) and [`rrepest`](https://github.com/cran/Rrepest) R packages were employed to handle the complex survey design of PISA data, ensuring accurate estimation of statistics such as mean scores, confidence intervals, and standard errors. These packages allowed for the calculation of weighted averages, taking into account the total number of teachers and non-teachers in each cohort to provide a more representative estimate of the average proficiency scores.
+
+As PISA uses sampling weights to account for its stratified, multi-staged sampling design which includes adjustments for things such as non-response, school selection and student participation, the `Rrepest` package applies these weights when calculating summary statistics. It will iteratively apply each set of replicate weights to generate multiple estimates. These estimates are then combined to produced accurate standard errors that reflect the variability introduced by PISA's sampling structure. This approach also ensures that results are not biased by unequal probabilities of selection and attempt to provide more representativeness.
+
+In the case of this analysis, the `Rrepest` package was utilised mostly in determining our summary statistics, although results were crossed checked with the `intsvy` package. The package included functions that cycled through each plausible value, averaging the results while simultaneously applying the survey weights to maintain representatives. This combined approach of incorporating plausible values and weights ensures that the estimates are statistically valid, accounting for uncertainty in measurement and complex survey design. It was also [recommended](https://www.oecd.org/en/about/programmes/pisa/how-to-prepare-and-analyse-the-pisa-database.html) by the OECD for handling PISA data and plausible values.
 
 
 # Results
 
-As earlier mentioned in the report, the project sought to address three key questions through the exploration of the mathematical performance of indiviudals who became primary school teachers. 
-
-
+As earlier mentioned in the report, the project aimed to explore three key questions regarding the mathematical performance of individuals who eventually became primary school teachers.
 
 ### How well did individuals who became primary school teachers perform in mathematics across the years?
 
-The analysis reveals that individuals who eventually became primary school teachers consistently performed better in mathematics compared to their non-teaching peers over the years. To quantify this, the weighted average proficiency of teachers and non-teachers was calculated taking into consideration the total number of teachers and non-teachers which served as the basis for weighting the average proficiency scores. 
+The analysis reveals that individuals who eventually became primary school teachers consistently performed better in mathematics compared to their non-teaching peers over the years. To quantify this, the weighted average proficiency of teachers and non-teachers was calculated, considering the total number of each group to ensure more accurate average scores.
 
-The results show as depicted in @fig-weightedprof, and illustrates that over the years considered in this analysis, just over 80% of teachers met or exceed the national proficiency standard. In comparison, just over 60% of the non-teachers met or exceeded the national proficiency standard of 482 PISA points. This may suggest that individuals who eventually become primary school teachers have a higher proficiency in mathematics compared to their non-teaching peers.
+The results, as shown in @fig-weightedprof, indicate that just over 80% of teachers met or exceeded the national proficiency standard of 482 PISA points, compared to just over 60% of non-teachers. This substantial difference suggests that individuals who eventually become primary school teachers possess stronger mathematical skills than their non-teaching peers from the same cohort. These results highlight the higher mathematical readiness of future teachers, which may have implications for their effectiveness in the classroom.
+
+However, an important limitation to consider is that the smaller sample of teachers may reduce the observed variability, potentially skewing results if high-performing individuals are overrepresented. @fig-probdist shows that in the 2003 sample, there is less variability within the teacher group compared to the non-teacher group. This potential selection bias could lead to an inflated perception of average teacher math proficiency, as the sample might not fully capture the broader range of abilities likely found in the general teacher population.
+
 
 ```{r}
-
+#| label: tbl-profscores
 pisa_results <- data.frame(
   Year = c(2003, 2003, 2006, 2006, 2009, 2009, 2015, 2015),
   Teacher = c("False", "True", "False", "True", "False", "True", "False", "True"),
@@ -255,32 +271,26 @@ pisa_results %>%
 
 ![Weighted Average of Performance Across Years: Teachers vs Non-Teachers](images/weightedprof.png){#fig-weightedprof}
 
-
+![Probability Distribution of 2003 Mathematics PISA Scores](images/probdist.png){#fig-probdist}
 
 
 ### How do teachers' math scores compare to the rest of the sample (non primary school teachers)?
 
-When trying to see how teachers performed in each year, we were able to find that teachers tended to perform better across each year of testing. As seen in @fig-acrossyears, teachers (red) tend to do consistently better than non-teachers (orange) across the years. 
+@fig-acrossyears shows that teachers tend to perform better than non-teachers across each year of testing.
 
-The boxplots shows that the median, interquartile range, and 10th and 90th percentiles. The boxplots for non-teachers have longer whiskers, indicating a broader range of scores and greater variability in math proficiency compared to teachers. The wider spread suggests that non-teachers include individuals with a diverse range of mathematical skills, spanning from very low to very high.
+This is demonstrated by a consistently higher median score for teachers (red) compared to non-teachers (orange) over the years. The boxplots reveal differences in score distribution, with non-teachers showing longer whiskers, indicating a broader range of math scores and greater variability. This wider spread suggests that non-teachers have a more diverse range of mathematical abilities.
 
-For teachers, the whiskers are shorter, indicating more consistency in their math scores. However, the standard error (SE) for the teacher group is higher, this is likely due to their smaller sample size, which increases the uncertaining in estimating the average score.
-
-Ultimately, while non-teachers exhibit more variability in individual scores, the higher standard error for teachers reflects the effect of smaller sample sizes on the precision of the average, not necessarily a greater variability in the scores itself.
-
+In contrast, the boxplots for teachers display slightly shorter whiskers, indicating more consistent scores among this group. However, as seen in @tbl-profscores, the standard error (SE) for teachers is higher, likely due to the smaller sample size. This increases the uncertainty in estimating their average score but does not imply greater variability within the teacher group.
 
 ![Proficiency of Teachers vs Non-Teachers Across Years](images/profacrossyears.png){#fig-acrossyears}
 
-
-
 ### How are they performing in comparison to other 'professionals'?
 
-The project had a smaller focus on understanding how teachers' mathematical proficiency compared to other professionals, driven largely by curiosity rather than formal research aims. The selection of professional categories was based on existing reports, and the analysis was conducted on the 2003 PISA cohort, the year with the largest sample of teachers. However this still had its limitations due to the smaller sample size of the relative professional groups within a total sample of 10,370, limiting the overall robustness of the findings.
+The project had a smaller focus on understanding how teachers' mathematical proficiency compared to other professionals, driven largely by curiosity rather than formal research aims. The selection of professional categories was based on existing reports, and the analysis was conducted on the 2003 PISA cohort, the year with the largest sample of teachers. However this still had its limitations due to the smaller sample size of the relative professional groups within a total sample of 10,370 as seen in @tbl-professionals.
 
-Despite this, as seen in @fig-professionals, teachers performed lower than most other professional groups in terms of average mathematical proficiency at age 15. Professions such as medical practitioners, legal professionals, engineers and auditors scored higher on average, indicating better mathematical capability amongst these groups. However, teachers school higher than the 'Other' category, which represents the broader population to aligned with the specific professions of interest. This suggests that while teachers were not among the highest performing professional groups, they seemed to demonstrate better mathematical proficiency than the general cohort.
+@fig-professionals represents the average PISA scores for teachers and other professionals, along with 90 percent confidence intervals. The analysis suggested that teachers performed lower than most other professional groups in terms of average mathematical proficiency at age 15. Professions such as medical practitioners, legal professionals, engineers and auditors scored higher on average, indicating better mathematical capability among these groups. However, teachers scored higher than the 'Other' category, which represents the broader population not within aforementioned professions. This suggests that while teachers were not among the highest performing professional groups, they seemed to demonstrate better mathematical proficiency than the general cohort.
 
-Despite these findings, it is important to consider the larger confidence intervals observed for certain professional groups, such as legal professionals, engineers, and auditors. These wider intervals indicate greater uncertainty in the estimates and may result from factors like smaller sample sizes and higher variability within these groups.
-
+Despite these findings, it is important to consider the larger confidence intervals observed for some professional groups, such as legal professionals, engineers and auditors. These wider intervals primarily reflect greater uncertainty in the estimates due to smaller sample sizes and potential sample bias within these groups. This increased uncertainty makes precise comparisons more challenging and difficult to ascertain with confidence the true average performance of these professional groups.
 
 ![Teachers in Comparison to Other Professionals](images/professionals.png){#fig-professionals}
 
@@ -313,26 +323,23 @@ As mentioned prior, while PISA tests part of the expected learning outcomes of f
 
 Additionally, PISA only tracks individuals from the age of 15 to 25, and this does not account for the many other ways individuals go into the pathway of being teachers. For example, mathematical proficiency can be enhanced through alternative pathways or lived work experience before the individual moved into teaching. This could also suggest that the analysis may not capture the full range of individuals who become teachers and their mathematical proficiency.
 
-**High Standerd Error:**
+**High Standard Error:**
+
+The high standard errors observed in the estimates for teachers ans some pro
 
 
+For the project, to determine whether differences in mathematical proficiency between teachers and non-teachers statistically significant, a series of Welch's t-tests were conducted for each year. A Welch's t-test was deemed sufficient for this analysis, as it accommodates differences variances and sample sizes between groups. The t-tests generally showed statistically significant differences in average scores, with teachers consistently outperforming non-teachers in the years analysed. However, this should be treated as preliminary statistical analysis due to limitations prior mentioned and methodological considerations behind the reasoning to not include the results of these t-tests include:
+
+-  **Small sample size:** There are relatively very small sample sizes for teachers, especially in latter years due to not all waves being released for the cohort (e.g. there are only 27 teachers in the 2015 sample). 
+
+-  **Normality assumption:** The t-test assumes a normal distribution of scores within each group, but this assumption may not hold, especially given the small teacher samples. This could affect the validity of the test results. As seen in @fig-probdist, which represents *only* the 2003 sample, the distribution of teacher scores (orange) shows slight skewness and a narrower spread, indicating potential deviations from normality. The reduced sample size may also underrepresent true variability among teacher scores, further complicating interpretation.
+
+Next steps could build upon this with the potential use of non-parametric tests or bootstrapping techniques.
 
 
+This analysis reveals that individuals who later became primary school teachers generally exhibit higher mathematical proficiency than non-teaching peers, consistently meeting or exceeding national standards. However, limitations such as smaller sample sizes, attrition rates, and PISA's narrow scope in terms of age and content coverage must be acknowledged.Despite these constraints, meaningful trends can be seen. In particular, teachers achieve stronger median scores and less variability. Yet, they still fall behind STEM professionals. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Although these findings suggest a strong basis for the individuals in this sample that eventually became teachers, teacher effectiveness extends beyond proficiency, emphasising the need for future research to include pedagogical skills and statistical tests that can determine with more confidence whether the difference between teachers and non-teachers are statistically significant. Thus, while the findings offer insights into teachers' mathematical strengths, they remain preliminary and should be used in conjunction with assessments that indicate how well these individuals would be able to teach and communicate mathematical concepts effectively.
 
 
 # References

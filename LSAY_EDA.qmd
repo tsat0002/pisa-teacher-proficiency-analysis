@@ -225,8 +225,6 @@ ggplot(data = data.frame(x = c(-0, 1000)),
 
 ```
 
-
-
 ```{r}
 # creating columns to indicate if teacher was proficient or not
 LSAY2003_proficiency <- 
@@ -250,8 +248,7 @@ LSAY2003_agprof <- Rrepest::Rrepest(data = LSAY2003_proficiency,
 
 Looking for variables linked with the question: "What is your main area of study or training in this (apprenticeship/traineeship/course)?"
 
-These variables included:
--   LBC087, LCC087, LDC087, LEC087, LFC087, LGC088, LHC088, LIC088, LJC088, LKC088
+These variables included: - LBC087, LCC087, LDC087, LEC087, LFC087, LGC088, LHC088, LIC088, LJC088, LKC088
 
 ```{r}
 
@@ -382,9 +379,9 @@ LSAY2006_agprof
 
 ### How many people in the 2009 cohort studied teaching?
 
-"What is your main area of study or training in this (apprenceship/traineeship/course)?" 
+"What is your main area of study or training in this (apprenceship/traineeship/course)?"
 
-* LBC089, LCC088, LDC088, LEC088, LFC088, LGC088, LHC088, LIC088, LJC088, LKC088
+-   LBC089, LCC088, LDC088, LEC088, LFC088, LGC088, LHC088, LIC088, LJC088, LKC088
 
 Then filtering for ASCED code `70103` (Teacher Education: Primary)
 
@@ -507,8 +504,7 @@ LSAY2009_agprof <- Rrepest::Rrepest(data = LSAY2009_proficiency,
 
 ### How many people in the 2015 cohort studied teaching?
 
-"What is your main area of study or training in this (apprenceship/traineeship/course)?" 
-* LCC088, LDC088, LEC088, LFC088, LGC088, LHC088
+"What is your main area of study or training in this (apprenceship/traineeship/course)?" \* LCC088, LDC088, LEC088, LFC088, LGC088, LHC088
 
 ```{r}
 
@@ -534,7 +530,7 @@ studying_teachers_2015
 
 Looking for code `2412` in variables related to the question: "What kind of work do you do in this job?"
 
-* LCD022, LDD022, LED022, LFD025, LGD022, LHD022
+-   LCD022, LDD022, LED022, LFD025, LGD022, LHD022
 
 ```{r}
 
@@ -737,6 +733,7 @@ base_chart_2015 +
 ### Statistical Significance
 
 Doing some statistical t-tests to see if differences are statistically significant.
+
 ```{r}
 # Manual t-test calculation for 2003
 mean_FALSE <- 530.3
@@ -953,7 +950,6 @@ profession_visualisation <- professionals_vis %>%
 
 
 ```
-
 
 ```{r}
 #70th percentile
@@ -1336,8 +1332,6 @@ teacher_fact <- teacher_fact +
 teacher_fact
 ```
 
-
-
 ```{r}
 # Save key charts
 
@@ -1350,7 +1344,3 @@ grattan_save_pptx(plot_list_for_export, filename = "atlas/LSAY_plots.pptx")
 
 grattan_save_pptx(teacher_count_plot, filename = "atlas/teacher_count.pptx")
 ```
-
-
-
-
