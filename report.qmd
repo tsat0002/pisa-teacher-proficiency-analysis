@@ -344,27 +344,66 @@ Although these findings suggest a strong basis for the individuals in this sampl
 
 # References
 
-Baumert, J., Kunter, M., Blum, W., Brunner, M., Voss, T., Jordan, A., Klusmann, U., Krauss, S., Neubrand, M., & Tsai, Y.-M. (2010). Teachers’ Mathematical Knowledge, Cognitive Activation in the Classroom, and Student Progress. American Educational Research Journal, 47(1), 133-180. https://doi.org/10.3102/0002831209345157 
+Baumert, J., Kunter, M., Blum, W., Brunner, M., Voss, T., Jordan, A., Klusmann, U., Krauss, S., Neubrand, M., & Tsai, Y.-M. (2010). Teachers’ Mathematical Knowledge, Cognitive Activation in the Classroom, and Student Progress. American Educational Research Journal, 47(1), 133-180. https://doi.org/10.3102/0002831209345157
 
+Caro DH, Biecek P (2017). “intsvy: An R Package for Analyzing International Large-Scale Assessment Data.” Journal of Statistical Software, 81(7), 1-44. doi:10.18637/jss.v081.i07.
 
-Gotsis, T. (2020). NSW school education: PISA 2018, socioeconomic background and proposals for reform. https://www.parliament.nsw.gov.au/researchpapers/Pages/NSW-school-education-PISA-2018.aspx
+Cowgill M (2024). ggdirectlabel: Make it Easier to Directly Label ggplot2 Charts Rather Than Using Legends. R package version 0.1.0.901.
 
+Cowgill M, Mackey W (2024). grattantheme: Create Graphs in the Grattan Institute Style. R package version 1.2.0.
+
+Gotsis, T. (2020). NSW school education: PISA 2018, socioeconomic background and proposals for reform. Parliament of New South Wales. https://www.parliament.nsw.gov.au/researchpapers/Pages/NSW-school-education-PISA-2018.aspx
+
+Grolemund G, Wickham H (2011). “Dates and Times Made Easy with lubridate.” Journal of Statistical Software, 40(3), 1-25. URL: https://www.jstatsoft.org/v40/i03/.
+
+Hester J, Bryan J (2024). glue: Interpreted String Literals. R package version 1.7.0, https://CRAN.R-project.org/package=glue.
 
 Hill, H. C., Rowan, B., & Ball, D. L. (2005). Effects of Teachers’ Mathematical Knowledge for Teaching on Student Achievement. American Educational Research Journal, 42(2), 371-406. https://doi.org/10.3102/00028312042002371
 
+Ilizaliturri R, Avvisati F, Keslair F (2023). Rrepest: An Analyzer of International Large Scale Assessments in Education. R package version 1.3.0, https://CRAN.R-project.org/package=Rrepest.
 
-Morsy, L., Khavenson, T., & Carnoy, M. (2018). How international tests fail to inform policy: The unsolved mystery of Australia’s steady decline in PISA scores. International Journal of Educational Development, 60, 60-79. https://doi.org/https://doi.org/10.1016/j.ijedudev.2017.10.018
+Kay M (2024). “ggdist: Visualizations of Distributions and Uncertainty in the Grammar of Graphics.” IEEE Transactions on Visualization and Computer Graphics, 30(1), 414-424. doi:10.1109/TVCG.2023.3327195.
 
+Lumley T (2004). “Analysis of Complex Survey Samples.” Journal of Statistical Software, 9(1), 1-19.
+
+Lumley T (2010). Complex Surveys: A Guide to Analysis Using R. John Wiley and Sons.
+
+Lumley T (2024). survey: analysis of complex survey samples. R package version 4.4.
+
+Morsy, L., Khavenson, T., & Carnoy, M. (2018). How international tests fail to inform policy: The unsolved mystery of Australia’s steady decline in PISA scores. International Journal of Educational Development, 60, 60-79. https://doi.org/10.1016/j.ijedudev.2017.10.018
 
 Norton, S. (2019). The relationship between mathematical content knowledge and mathematical pedagogical content knowledge of prospective primary teachers. Journal of Mathematics Teacher Education, 22(5), 489-514. https://doi.org/10.1007/s10857-018-9401-y
 
+OECD. (2009). "Plausible Values", in OCED (Ed.), PISA Data Analysis Manual: SPSS (2nd ed., pp. 93-101). OECD Publishing. https://doi.org/10.1787/9789264056275-7-en
 
-OECD. (2009). Plausible Values. https://doi.org/doi:https://doi.org/10.1787/9789264056275-7-en
+OECD. (2019). What can students do in mathematics? In OCED (Ed.), PISA 2018 Results (pp. 103-110). OECD Publishing. https://doi.org/10.1787/f649d3c2-en
 
+OECD. (2023). What can students do in mathematics, reading and science? In OCED (Ed.), PISA 2022 Results (pp. 88-108). OECD Publishing. https://doi.org/10.1787/02f44b44-en
 
-Okubo, T. (2022). Theoretical considerations on scaling methodology in PISA.https://doi.org/doi:https://doi.org/10.1787/c224dbeb-en
+Okubo, T. (2022). "Theoretical considerations on scaling methodology in PISA." OECD Education Working Papers (Working Paper No. 282). OECD Publishing. https://doi.org/10.1787/c224dbeb-en
 
+O'Hara-Wild M, Kay M, Hayes A (2024). distributional: Vectorised Probability Distributions. R package version 0.4.0, https://CRAN.R-project.org/package=distributional.
 
+Sievert C (2020). Interactive Web-Based Data Visualization with R, plotly, and shiny. Chapman and Hall/CRC Florida.
 
- Wu, M. (2022, June 7) Chapter 14 Estimating Population Characteristics - Part II: Plausible Values. A Course on Test and Item Analyses. Retrieved October 28, 2024, from https://www.edmeasurementsurveys.com/Ch14.html
+Slowikowski K (2023). ggrepel: Automatically Position Non-Overlapping Text Labels with ggplot2. R package version 0.9.3, https://CRAN.R-project.org/package=ggrepel.
 
+Wickham H (2016). ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York.
+
+Wickham H, Averick M, Bryan J, et al. (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686. doi:10.21105/joss.01686.
+
+Wickham H, Bryan J (2023). readxl: Read Excel Files. R package version 1.4.3, https://CRAN.R-project.org/package=readxl.
+
+Wickham H, François R, Henry L, Müller K, Vaughan D (2023). dplyr: A Grammar of Data Manipulation. R package version 1.1.3, https://CRAN.R-project.org/package=dplyr.
+
+Wickham H, Henry L (2023). purrr: Functional Programming Tools. R package version 1.0.2, https://CRAN.R-project.org/package=purrr.
+
+Wickham H, Miller E, Smith D (2023). haven: Import and Export 'SPSS', 'Stata' and 'SAS' Files. R package version 2.5.4, https://CRAN.R-project.org/package=haven.
+
+Wickham H, Pedersen T, Seidel D (2023). scales: Scale Functions for Visualization. R package version 1.3.0, https://CRAN.R-project.org/package=scales.
+
+Wilke C, Wiernik B (2022). ggtext: Improved Text Rendering Support for 'ggplot2'. R package version 0.1.2, https://CRAN.R-project.org/package=ggtext.
+
+Wu, M. (2022, June 7). Chapter 14 Estimating Population Characteristics - Part II: Plausible Values. A Course on Test and Item Analyses. Retrieved October 28, 2024, from https://www.edmeasurementsurveys.com/Ch14.html
+
+Zhu H (2021). kableExtra: Construct Complex Table with 'kable' and Pipe Syntax. R package version 1.3.4, https://CRAN.R-project.org/package=kableExtra.
